@@ -1,3 +1,6 @@
+
+flask==3.0.0
+flask-cors==4.0.0
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from datetime import datetime
@@ -89,3 +92,11 @@ def audit_leave():
 # 為了讓 Vercel 能夠執行
 if __name__ == '__main__':
     app.run()
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    }
+  ]
+}
